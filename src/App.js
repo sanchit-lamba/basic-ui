@@ -48,7 +48,7 @@ function App() {
     try {
       for (const cin of cins) {
         if (cin.trim() !== '') {
-          const response = await axios.get(`http://api.sanchit.cc:8000/brsr-report/?cin=${cin}`, {
+          const response = await axios.get(`https://api.sanchit.cc:8000/brsr-report/?cin=${cin}`, {
             withCredentials: false
           });
           newReports.push(response.data.parsed_response);
