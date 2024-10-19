@@ -7,8 +7,7 @@ import {
   createTheme, ThemeProvider, CssBaseline, Switch, FormControlLabel
 } from '@mui/material';
 import * as XLSX from 'xlsx';
-const httpAgent = new http.Agent({ rejectUnauthorized: false });
-const httpsAgent = new https.Agent({ rejectUnauthorized: false }); // For both HTTP and HTTPS (if needed)
+
 const defaultTheme = createTheme({
   palette: {
     mode: 'light',
@@ -49,8 +48,8 @@ function App() {
     try {
       for (const cin of cins) {
         if (cin.trim() !== '') {
-        const response = await axios.get(`https://api.sanchit.cc:8000/brsr-report/?cin=${cin}`, {
-          withCredentials: false
+          const response = await axios.get(`http://20.197.35.82:8000/brsr-report/?cin=${cin}`, {
+            withCredentials: false
           });
           newReports.push(response.data.parsed_response);
         }
