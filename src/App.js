@@ -51,7 +51,7 @@ function App() {
     try {
       for (const cin of cins) {
         if (cin.trim() !== '') {
-        const response = await axios.get(`http://20.197.35.82:8000/brsr-report/?cin=${cin}`, {
+        const response = await axios.get(`https://api.sanchit.cc:8000/brsr-report/?cin=${cin}`, {
           httpAgent,  // Use the custom agent
           httpsAgent, // use the custom https agent
           withCredentials: false
