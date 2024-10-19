@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import http from 'http';
-import https from 'https';
 import {
   TextField, Button, Table, TableBody, TableCell,
   TableContainer, TableHead, TableRow, Paper,
@@ -52,8 +50,6 @@ function App() {
       for (const cin of cins) {
         if (cin.trim() !== '') {
         const response = await axios.get(`https://api.sanchit.cc:8000/brsr-report/?cin=${cin}`, {
-          httpAgent,  // Use the custom agent
-          httpsAgent, // use the custom https agent
           withCredentials: false
           });
           newReports.push(response.data.parsed_response);
